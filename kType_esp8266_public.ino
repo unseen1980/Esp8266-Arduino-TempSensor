@@ -1,7 +1,5 @@
 #include <SPI.h>
-
 #include <Adafruit_MAX31855.h>
-
 #include<stdlib.h>
 #define SSID "YOUR SSID"//your network name
 #define PASS "YOUR PASSWORD"//your network password
@@ -14,7 +12,6 @@ int thermoCS = 12;
 int thermoDO = 13;
 Adafruit_MAX31855 thermocouple(thermoCLK, thermoCS, thermoDO);
 String GET = "GET /update?key=YOUR_KEY&field1=";
-
 bool updated;
 
 void setup()
@@ -35,7 +32,7 @@ void setup()
   }                     
 }
  
-void loop()                     // run over and over again
+void loop()
 {
 double c = thermocouple.readCelsius();
    if (isnan(c)) 
